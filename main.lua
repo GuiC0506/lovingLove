@@ -8,11 +8,15 @@ end
 -- callback called that update the state of the game every frame
 --- @param dt integer deltatime
 function love.update(dt)
-    if Number < 240 then
+    if Number < 255 then
         Number = Number + 1
+    else
+        Number = 0
     end
 end
 
+-- Callback function used to draw on the screen every frame.
 function love.draw()
-    love.graphics.print(Number)
+    love.graphics.setColor(Number, Number / 2, 0, 1 / Number)
+    love.graphics.rectangle("fill", 200, 200, 150, 100)
 end
